@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+spring:
+  mvc:
+    static-path-pattern: static/**
+
+  freemarker:
+    sffix: .ftl
+    charset: UTF-8
+    content-type: text/html
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+    servlet:
+      content-type: text/html
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf-8&serverTimeZone=Asia/Shanghai
+    username: root
+    password: 1830502101@me
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${tempFilePath.directory}
+
+tempFilePath:
+  directory: D://temp/images/
